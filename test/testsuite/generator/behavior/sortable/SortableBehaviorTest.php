@@ -22,7 +22,7 @@ require_once dirname(__FILE__) . '/../../../../../generator/lib/behavior/sortabl
  */
 class SortableBehaviorTest extends BookstoreTestBase
 {
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

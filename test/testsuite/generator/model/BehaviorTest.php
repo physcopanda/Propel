@@ -20,7 +20,7 @@ require_once dirname(__FILE__) . '/../../../../generator/lib/behavior/Timestampa
  * @version    $Revision$
  * @package    generator.model
  */
-class BehaviorTest extends \PHPUnit\Framework\TestCase
+class BehaviorTest extends PHPUnit_Framework_TestCase
 {
   private $xmlToAppData;
   private $appData;
@@ -100,7 +100,6 @@ EOF;
    */
     public function testUnknownBehavior()
     {
-        $this->expectException(InvalidArgumentException::class);
         $xmlToAppData = new XmlToAppData();
         $schema = <<<EOF
 <database name="test1">

@@ -14,9 +14,9 @@
  * @author     Francois Zaninotto
  * @package    generator.behavior
  */
-class TableBehaviorTest extends \PHPUnit\Framework\TestCase
+class TableBehaviorTest extends PHPUnit_Framework_TestCase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         set_include_path(get_include_path() . PATH_SEPARATOR . "fixtures/bookstore/build/classes");

@@ -1,13 +1,13 @@
 <?php
 
-class CustomPlatformTest extends \PHPUnit\Framework\TestCase
+class CustomPlatformTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @var GeneratorConfig
      */
     protected $generatorConfig;
 
-    public function setUp(): void
+    public function setUp()
     {
         $projectDir = realpath(__DIR__ . '/../../../fixtures/generator/platform/');
         $platformClass = str_replace('/', '.', $projectDir) . '.CustomPlatform';

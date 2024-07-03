@@ -16,7 +16,7 @@ require_once dirname(__FILE__) . '/../../../../../generator/lib/builder/util/Xml
  * @version    $Revision$
  * @package    generator.builder.util
  */
-class XmlToAppDataTest extends \PHPUnit\Framework\TestCase
+class XmlToAppDataTest extends PHPUnit_Framework_TestCase
 {
 
     public function testParseStringEmptySchema()
@@ -44,7 +44,6 @@ class XmlToAppDataTest extends \PHPUnit\Framework\TestCase
      */
     public function testParseStringIncorrectSchema()
     {
-        $this->expectException(SchemaException::class);
         $schema = '<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><foo/>';
         $xtad = new XmlToAppData();
         $appData = $xtad->parseString($schema);

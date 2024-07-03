@@ -1,3 +1,4 @@
+
 /**
  * Adds a JOIN clause to the query and hydrates the related I18n object.
  * Shortcut for $c->joinI18n($locale)->with()

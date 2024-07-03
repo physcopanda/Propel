@@ -14,10 +14,10 @@ set_include_path(get_include_path() . PATH_SEPARATOR . realpath(dirname(__FILE__
 /**
  * Bse class for tests on the schemas schema
  */
-abstract class NamespacesTestBase extends \PHPUnit\Framework\TestCase
+abstract class NamespacesTestBase extends PHPUnit_Framework_TestCase
 {
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         if (!file_exists(dirname(__FILE__) . '/../../../fixtures/namespaced/build/conf/bookstore_namespaced-conf.php')) {
@@ -26,7 +26,7 @@ abstract class NamespacesTestBase extends \PHPUnit\Framework\TestCase
         Propel::init(dirname(__FILE__) . '/../../../fixtures/namespaced/build/conf/bookstore_namespaced-conf.php');
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         parent::tearDown();
         Propel::init(dirname(__FILE__) . '/../../../fixtures/bookstore/build/conf/bookstore-conf.php');

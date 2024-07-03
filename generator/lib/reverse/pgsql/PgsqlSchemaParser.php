@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once dirname(__FILE__) . '/../BaseSchemaParser.php';
 
 /**
  * Postgresql database schema parser.
@@ -174,7 +175,7 @@ class PgsqlSchemaParser extends BaseSchemaParser
                                         att.atttypmod,
                                         att.atthasdef,
                                         att.attnotnull,
-                                        pg_get_expr(def.adbin, def.adrelid) as adsrc,
+                                        def.adsrc,
                                         CASE WHEN att.attndims > 0 THEN 1 ELSE 0 END AS isarray,
                                         CASE
                                             WHEN ty.typname = 'bpchar'

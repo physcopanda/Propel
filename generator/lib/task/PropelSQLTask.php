@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once 'model/AppData.php';
 
 /**
  * The task for building SQL DDL based on the XML datamodel.

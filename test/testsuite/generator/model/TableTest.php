@@ -21,7 +21,7 @@ require_once dirname(__FILE__) . '/../../../tools/helpers/DummyPlatforms.php';
  * @author     Martin Poeschl (mpoeschl@marmot.at)
  * @package    generator.model
  */
-class TableTest extends \PHPUnit\Framework\TestCase
+class TableTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -167,7 +167,6 @@ CREATE TABLE `bar`
      */
     public function testUniqueColumnName()
     {
-        $this->expectException(EngineException::class);
         $xmlToAppData = new XmlToAppData();
         $schema = <<<EOF
 <database name="columnTest" defaultIdMethod="native">
@@ -187,7 +186,6 @@ EOF;
      */
     public function testUniqueTableName()
     {
-        $this->expectException(EngineException::class);
         $xmlToAppData = new XmlToAppData();
         $schema = <<<EOF
 <database name="columnTest" defaultIdMethod="native">

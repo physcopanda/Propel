@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once 'builder/sql/DataSQLBuilder.php';
 
 /**
  * MS SQL Server class for building data dump SQL.

@@ -27,7 +27,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/Bookstore
  */
 class GeneratedPeerDoSelectTest extends BookstoreEmptyTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         BookstoreDataPopulator::populate();

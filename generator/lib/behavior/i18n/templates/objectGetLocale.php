@@ -1,3 +1,4 @@
+
 /**
  * Gets the locale for translations
  *

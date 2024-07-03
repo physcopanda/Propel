@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once dirname(__FILE__) . '/DefaultPlatform.php';
 
 /**
  * Oracle PropelPlatformInterface implementation.

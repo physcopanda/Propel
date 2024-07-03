@@ -17,7 +17,7 @@ require_once dirname(__FILE__) . '/../../../../generator/lib/model/PhpNameGenera
  * @version    $Revision$
  * @package    generator.model
  */
-class PhpNameGeneratorTest extends \PHPUnit\Framework\TestCase
+class PhpNameGeneratorTest extends PHPUnit_Framework_TestCase
 {
     public static function phpnameMethodDataProvider()
     {

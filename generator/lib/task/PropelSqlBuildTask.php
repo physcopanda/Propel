@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once 'util/PropelSqlManager.php';
 
 /**
  * The new task for building SQL DDL based on the XML datamodel.

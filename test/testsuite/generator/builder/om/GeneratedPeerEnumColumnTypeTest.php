@@ -17,9 +17,9 @@ require_once dirname(__FILE__) . '/../../../../../runtime/lib/Propel.php';
  * @author     Francois Zaninotto
  * @package    generator.builder.om
  */
-class GeneratedPeerEnumColumnTypeTest extends \PHPUnit\Framework\TestCase
+class GeneratedPeerEnumColumnTypeTest extends PHPUnit_Framework_TestCase
 {
-    public function setUp(): void
+    public function setUp()
     {
         if (!class_exists('ComplexColumnTypeEntity103Peer')) {
             $schema = <<<EOF
@@ -73,7 +73,6 @@ EOF;
      */
     public function testGetValueSetInvalidColumn()
     {
-        $this->expectException(PropelException::class);
         ComplexColumnTypeEntity103Peer::getValueSet(ComplexColumnTypeEntity103Peer::ID);
     }
 

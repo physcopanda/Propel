@@ -242,7 +242,6 @@ class PropelArrayFormatterWithTest extends BookstoreEmptyTestBase
      */
     public function testFindOneWithOneToManyAndLimit()
     {
-        $this->expectException(PropelException::class);
         $c = new ModelCriteria('bookstore', 'Book');
         $c->setFormatter(ModelCriteria::FORMAT_ARRAY);
         $c->add(BookPeer::ISBN, '043935806X');

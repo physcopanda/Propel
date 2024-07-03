@@ -16,14 +16,14 @@ include_once dirname(__FILE__) . '/CmsDataPopulator.php';
 /**
  * Base class contains some methods shared by subclass test cases.
  */
-abstract class CmsTestBase extends \PHPUnit\Framework\TestCase
+abstract class CmsTestBase extends PHPUnit_Framework_TestCase
 {
     protected $con;
 
     /**
      * This is run before each unit test; it populates the database.
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->con = Propel::getConnection(PagePeer::DATABASE_NAME);
@@ -35,7 +35,7 @@ abstract class CmsTestBase extends \PHPUnit\Framework\TestCase
     /**
      * This is run after each unit test.  It empties the database.
      */
-    protected function tearDown(): void
+    protected function tearDown()
     {
         CmsDataPopulator::depopulate($this->con);
         $this->con->commit();

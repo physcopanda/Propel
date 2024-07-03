@@ -8,6 +8,7 @@
  * @license     MIT License
  */
 
+require_once dirname(__FILE__) . '/../ForeignKey.php';
 
 /**
  * Service class for comparing ForeignKey objects

@@ -18,9 +18,9 @@ set_include_path(get_include_path() . PATH_SEPARATOR . realpath(dirname(__FILE__
  * @version    $Revision$
  * @package    generator.builder
  */
-class NamespaceTest extends \PHPUnit\Framework\TestCase
+class NamespaceTest extends PHPUnit_Framework_TestCase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         if (version_compare(PHP_VERSION, '5.3.0') < 0) {
             $this->markTestSkipped('Namespace support requires PHP 5.3');
@@ -29,7 +29,7 @@ class NamespaceTest extends \PHPUnit\Framework\TestCase
         Propel::init(dirname(__FILE__) . '/../../../fixtures/namespaced/build/conf/bookstore_namespaced-conf.php');
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         parent::tearDown();
         Propel::init(dirname(__FILE__) . '/../../../fixtures/bookstore/build/conf/bookstore-conf.php');

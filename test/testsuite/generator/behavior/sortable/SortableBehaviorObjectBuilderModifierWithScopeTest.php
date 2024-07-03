@@ -21,7 +21,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/behavior/
  */
 class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortableTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->populateTable12();
@@ -166,7 +166,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testInsertAtNegativeRank()
     {
-        $this->expectException(PropelException::class);
         $t = new Table12();
         $t->setScopeValue(1);
         $t->insertAtRank(0);
@@ -177,7 +176,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testInsertAtOverMaxRank()
     {
-        $this->expectException(PropelException::class);
         $t = new Table12();
         $t->setScopeValue(1);
         $t->insertAtRank(6);
@@ -290,7 +288,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testMoveToNewObject()
     {
-        $this->expectException(PropelException::class);
         $t = new Table12();
         $t->moveToRank(2);
     }
@@ -300,7 +297,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testMoveToNegativeRank()
     {
-        $this->expectException(PropelException::class);
         $t = Table12Peer::retrieveByRank(2, 1);
         $t->moveToRank(0);
     }
@@ -310,7 +306,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testMoveToOverMaxRank()
     {
-        $this->expectException(PropelException::class);
         $t = Table12Peer::retrieveByRank(2, 1);
         $t->moveToRank(5);
     }
@@ -424,7 +419,6 @@ class SortableBehaviorObjectBuilderModifierWithScopeTest extends BookstoreSortab
      */
     public function testRemoveFromListNoScope()
     {
-        $this->expectException(PropelException::class);
         $t2 = Table12Peer::retrieveByRank(2);
         $t2->removeFromList();
     }

@@ -21,11 +21,11 @@ require_once dirname(__FILE__) . '/../../../../runtime/lib/exception/PropelExcep
  * @version    $Id$
  * @package    runtime.map
  */
-class TableMapTest extends \PHPUnit\Framework\TestCase
+class TableMapTest extends PHPUnit_Framework_TestCase
 {
   protected $databaseMap;
 
-  protected function setUp(): void
+  protected function setUp()
   {
     parent::setUp();
     $this->databaseMap = new DatabaseMap('foodb');
@@ -33,7 +33,7 @@ class TableMapTest extends \PHPUnit\Framework\TestCase
     $this->tmap = new TableMap($this->tableName, $this->databaseMap);
   }
 
-  protected function tearDown(): void
+  protected function tearDown()
   {
     // nothing to do for now
     parent::tearDown();
@@ -169,8 +169,7 @@ class TableMapTest extends \PHPUnit\Framework\TestCase
      */
   public function testLoadWrongRelations()
   {
-      $this->expectException(PropelException::class);
-      $this->tmap->getRelation('Bar');
+    $this->tmap->getRelation('Bar');
   }
 
   public function testLazyLoadRelations()
@@ -258,6 +257,22 @@ class TableMapTest extends \PHPUnit\Framework\TestCase
     $this->assertFalse($this->tmap->containsColumn('foo.bar', false), 'containsColumn accepts a $normalize parameter to skip name normalization');
     $this->assertTrue($this->tmap->containsColumn('BAR', false), 'containsColumn accepts a $normalize parameter to skip name normalization');
     $this->assertTrue($this->tmap->containsColumn($column), 'containsColumn accepts a ColumnMap object as parameter');
+  }
+
+  // deprecated methods
+  public function testPrefix()
+  {
+    $tmap = new TestableTableMap();
+    $this->assertNull($tmap->getPrefix(), 'prefix is empty until set');
+    $this->assertFalse($tmap->hasPrefix('barbaz'), 'hasPrefix returns false when prefix is not set');
+    $tmap->setPrefix('bar');
+    $this->assertEquals('bar', $tmap->getPrefix(), 'prefix is set by setPrefix()');
+    $this->assertTrue($tmap->hasPrefix('barbaz'), 'hasPrefix returns true when prefix is set and found in string');
+    $this->assertFalse($tmap->hasPrefix('baz'), 'hasPrefix returns false when prefix is set and not found in string');
+    $this->assertFalse($tmap->hasPrefix('bazbar'), 'hasPrefix returns false when prefix is set and not found anywhere in string');
+    $this->assertEquals('baz', $tmap->removePrefix('barbaz'), 'removePrefix returns string without prefix if found at the beginning');
+    $this->assertEquals('bazbaz', $tmap->removePrefix('bazbaz'), 'removePrefix returns original string when prefix is not found');
+    $this->assertEquals('bazbar', $tmap->removePrefix('bazbar'), 'removePrefix returns original string when prefix is not found at the beginning');
   }
 }
 

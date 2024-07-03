@@ -8,6 +8,7 @@
  * @license     MIT License
  */
 
+require_once dirname(__FILE__) . '/../Index.php';
 
 /**
  * Service class for comparing Index objects

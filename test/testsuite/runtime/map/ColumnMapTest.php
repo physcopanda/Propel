@@ -21,7 +21,7 @@ class ColumnMapTest extends BookstoreTestBase
 {
     protected $databaseMap;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->dmap = new DatabaseMap('foodb');
@@ -30,7 +30,7 @@ class ColumnMapTest extends BookstoreTestBase
         $this->cmap = new ColumnMap($this->columnName, $this->tmap);
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         // nothing to do for now
         parent::tearDown();

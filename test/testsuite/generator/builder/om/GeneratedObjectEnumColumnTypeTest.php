@@ -17,9 +17,9 @@ require_once dirname(__FILE__) . '/../../../../../runtime/lib/Propel.php';
  * @author     Francois Zaninotto
  * @package    generator.builder.om
  */
-class GeneratedObjectEnumColumnTypeTest extends \PHPUnit\Framework\TestCase
+class GeneratedObjectEnumColumnTypeTest extends PHPUnit_Framework_TestCase
 {
-    public function setUp(): void
+    public function setUp()
     {
         if (!class_exists('ComplexColumnTypeEntity3')) {
             $schema = <<<EOF
@@ -62,7 +62,6 @@ EOF;
      */
     public function testGetterThrowsExceptionOnUnknownKey()
     {
-        $this->expectException(PropelException::class);
         $e = new PublicComplexColumnTypeEntity3();
         $e->bar = 156;
         $e->getBar();
@@ -93,7 +92,6 @@ EOF;
      */
     public function testSetterThrowsExceptionOnUnknownValue()
     {
-        $this->expectException(PropelException::class);
         $e = new ComplexColumnTypeEntity3();
         $e->setBar('bazz');
     }

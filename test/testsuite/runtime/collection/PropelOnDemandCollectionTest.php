@@ -19,7 +19,7 @@ require_once dirname(__FILE__) . '/../../../tools/helpers/bookstore/BookstoreEmp
  */
 class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         BookstoreDataPopulator::populate($this->con);
@@ -27,7 +27,7 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
         $this->books = PropelQuery::from('Book')->setFormatter(ModelCriteria::FORMAT_ON_DEMAND)->find();
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         parent::tearDown();
         Propel::enableInstancePooling();
@@ -44,7 +44,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testClone()
     {
-        $this->expectException(PropelException::class);
         $clone = clone $this->books;
     }
 
@@ -62,7 +61,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testoffsetExists()
     {
-        $this->expectException(PropelException::class);
         $this->books->offsetExists(2);
     }
 
@@ -71,7 +69,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testoffsetGet()
     {
-        $this->expectException(PropelException::class);
         $this->books->offsetGet(2);
     }
 
@@ -80,7 +77,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testoffsetSet()
     {
-        $this->expectException(PropelException::class);
         $this->books->offsetSet(2, 'foo');
     }
 
@@ -89,7 +85,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testoffsetUnset()
     {
-        $this->expectException(PropelException::class);
         $this->books->offsetUnset(2);
     }
 
@@ -104,7 +99,6 @@ class PropelOnDemandCollectionTest extends BookstoreEmptyTestBase
      */
     public function testFromArray()
     {
-        $this->expectException(PropelException::class);
         $this->books->fromArray(array());
     }
 

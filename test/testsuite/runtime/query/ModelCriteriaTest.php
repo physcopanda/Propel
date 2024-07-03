@@ -92,13 +92,13 @@ class ModelCriteriaTest extends BookstoreTestBase
     /**
      * @dataProvider conditionsForTestReplaceNames
      */
-    public function testReplaceNames($origClause, $columnPhpName, $modifiedClause)
+    public function testReplaceNames($origClause, $columnPhpName = false, $modifiedClause)
     {
         $c = new TestableModelCriteria('bookstore', 'Book');
-        $this->doTestReplaceNames($c, BookPeer::getTableMap(), $origClause, $modifiedClause, $columnPhpName = false);
+        $this->doTestReplaceNames($c, BookPeer::getTableMap(), $origClause, $columnPhpName = false, $modifiedClause);
     }
 
-    public function doTestReplaceNames($c, $tableMap, $origClause, $modifiedClause, $columnPhpName = false)
+    public function doTestReplaceNames($c, $tableMap, $origClause, $columnPhpName = false, $modifiedClause)
     {
         $c->replaceNames($origClause);
         $columns = $c->replacedColumns;
@@ -562,7 +562,6 @@ class ModelCriteriaTest extends BookstoreTestBase
      */
     public function testGroupByClassThrowsExceptionOnUnknownClass()
     {
-        $this->expectException(PropelException::class);
         $c = new ModelCriteria('bookstore', 'Book');
         $c->groupByClass('Author');
     }
@@ -1069,7 +1068,6 @@ class ModelCriteriaTest extends BookstoreTestBase
      */
     public function testWithThrowsExceptionWhenJoinLacks()
     {
-        $this->expectException(PropelException::class);
         $c = new ModelCriteria('bookstore', 'Book');
         $c->with('Author');
     }
@@ -1088,7 +1086,6 @@ class ModelCriteriaTest extends BookstoreTestBase
      */
     public function testWithThrowsExceptionWhenNotUsingAlias()
     {
-        $this->expectException(PropelException::class);
         $c = new ModelCriteria('bookstore', 'Book');
         $c->join('Book.Author a');
         $c->with('Author');
@@ -1585,7 +1582,6 @@ class ModelCriteriaTest extends BookstoreTestBase
      */
     public function testFindOneOrCreateThrowsExceptionWhenQueryContainsJoin()
     {
-        $this->expectException(PropelException::class);
         $book = BookQuery::create('b')
             ->filterByPrice(125)
             ->useAuthorQuery()
@@ -1746,7 +1742,6 @@ class ModelCriteriaTest extends BookstoreTestBase
      */
     public function testFindPksCompositeKey()
     {
-        $this->expectException(PropelException::class);
         $c = new ModelCriteria('bookstore', 'BookListRel');
         $bookListRel = $c->findPks(array(array(1, 2)));
 

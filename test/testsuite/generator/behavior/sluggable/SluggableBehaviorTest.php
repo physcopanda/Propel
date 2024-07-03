@@ -87,7 +87,6 @@ class SluggableBehaviorTest extends BookstoreTestBase
      */
     public function testObjectCleanupSlugPart($in, $out)
     {
-        setlocale(LC_CTYPE, 'en_US.utf8');
         $t = new TestableTable13();
         $this->assertEquals($out, $t->cleanupSlugPart($in), 'cleanupSlugPart() cleans up the slug part');
     }

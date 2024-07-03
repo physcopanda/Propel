@@ -18,7 +18,7 @@ require_once dirname(__FILE__) . '/../../../../runtime/lib/exception/PropelExcep
  * @author     Francois Zaninotto
  * @package    runtime.parser
  */
-class PropelParserTest extends \PHPUnit\Framework\TestCase
+class PropelParserTest extends PHPUnit_Framework_TestCase
 {
     public function testGetParser()
     {
@@ -31,7 +31,6 @@ class PropelParserTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetParserThrowsExceptionOnWrongParser()
     {
-        $this->expectException(PropelException::class);
         $parser = PropelParser::getParser('Foo');
     }
 

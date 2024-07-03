@@ -21,7 +21,7 @@ class PHP5TableMapBuilderTest extends BookstoreTestBase
 {
   protected $databaseMap;
 
-  protected function setUp(): void
+  protected function setUp()
   {
       parent::setUp();
     $this->databaseMap = Propel::getDatabaseMap('bookstore');

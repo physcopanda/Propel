@@ -1,3 +1,4 @@
+
 /**
  * Returns the current translation for a given locale
  *

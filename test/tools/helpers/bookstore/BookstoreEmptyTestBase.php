@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -19,7 +20,7 @@ abstract class BookstoreEmptyTestBase extends BookstoreTestBase
     /**
      * This is run before each unit test; it empties the database.
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         BookstoreDataPopulator::depopulate($this->con);

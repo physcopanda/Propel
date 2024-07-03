@@ -1,5 +1,5 @@
 {
-  "name": "dayspring-tech/propel1",
+  "name": "propel/propel1",
   "description": "Propel is an open-source Object-Relational Mapping (ORM) for PHP5.",
   "keywords": ["orm", "active record", "mapping", "database", "persistence"],
   "homepage": "http://www.propelorm.org/",
@@ -14,23 +14,23 @@
   },
   "include-path": ["runtime/lib", "generator/lib"],
   "require": {
-    "php": "^8.0|^7.4",
-    "phing/phing": "^2.17",
-    "ext-pdo": "*"
+    "php": ">=5.2.4",
+    "phing/phing": "~2.4"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.0.0",
-    "phpcompatibility/php-compatibility": "^9.3",
-    "squizlabs/php_codesniffer": "^3.5",
-    "ext-simplexml": "*",
-    "ext-dom": "*"
+    "pear-pear.php.net/PEAR_PackageFileManager2": "@stable",
+    "phpunit/phpunit": "~4.0||~5.0"
   },
-  "replace": {
-    "propel/propel1": "^1.8"
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.7-dev"
+    }
   },
-  "bin": ["generator/bin/propel-gen", "generator/bin/propel-gen.bat"],
-  "scripts": {
-    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-    "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
-  }
+  "repositories": [
+    {
+      "type": "pear",
+      "url": "https://pear.php.net"
+    }
+  ],
+  "bin": ["generator/bin/propel-gen", "generator/bin/propel-gen.bat"]
 }

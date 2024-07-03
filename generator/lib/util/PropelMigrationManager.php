@@ -8,9 +8,10 @@
  * @license    MIT License
  */
 
-
-
-
+require_once dirname(__FILE__) . '/../model/Table.php';
+require_once dirname(__FILE__) . '/../model/Column.php';
+require_once dirname(__FILE__) . '/PropelSQLParser.php';
+require_once dirname(__FILE__) . '/../../../runtime/lib/Propel.php';
 
 /**
  * Service class for preparing and executing migrations

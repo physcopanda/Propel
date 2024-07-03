@@ -27,9 +27,9 @@
  * @author     Sven Fuchs <svenfuchs@artweb-design.de>
  * @package    misc
  */
-class FieldnameRelatedTest extends \PHPUnit\Framework\TestCase
+class FieldnameRelatedTest extends PHPUnit_Framework_TestCase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
 

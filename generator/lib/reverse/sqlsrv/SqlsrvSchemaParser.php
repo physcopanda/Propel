@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once 'reverse/mssql/MssqlSchemaParser.php';
 
 /**
  * Microsoft SQL Server database schema parser.

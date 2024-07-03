@@ -45,19 +45,19 @@ class PropelCSVParser extends PropelParser
         $rows = array();
         if ($isList) {
             if ($includeHeading) {
-                $rows[] = implode($this->delimiter, $this->formatRow(array_keys(reset($array))));
+                $rows[] = implode($this->formatRow(array_keys(reset($array))), $this->delimiter);
             }
             foreach ($array as $row) {
-                $rows[] = implode($this->delimiter, $this->formatRow($row));
+                $rows[] = implode($this->formatRow($row), $this->delimiter);
             }
         } else {
             if ($includeHeading) {
-                $rows[] = implode($this->delimiter, $this->formatRow(array_keys($array)));
+                $rows[] = implode($this->formatRow(array_keys($array)), $this->delimiter);
             }
-            $rows[] = implode($this->delimiter, $this->formatRow($array));
+            $rows[] = implode($this->formatRow($array), $this->delimiter);
         }
 
-        return implode($this->lineTerminator, $rows) . $this->lineTerminator;
+        return implode($rows, $this->lineTerminator) . $this->lineTerminator;
     }
 
     public function listFromArray($array)

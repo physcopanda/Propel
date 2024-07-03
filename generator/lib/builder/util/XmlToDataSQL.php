@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once 'phing/parser/AbstractHandler.php';
 
 /**
  * A Class that is used to parse an data dump XML file and create SQL using a DataSQLBuilder class.

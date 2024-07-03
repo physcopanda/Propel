@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once dirname(__FILE__) . '/PHP5ObjectBuilder.php';
 
 /**
  * Generates a PHP5 base Object class for user object model (OM).
@@ -110,9 +111,6 @@ class PHP5ObjectNoCollectionBuilder extends PHP5ObjectBuilder
         try {
             \$stmt = " . $this->getPeerClassname() . "::doSelectStmt(\$c, \$con);
             \$row = \$stmt->fetch(PDO::FETCH_NUM);
-            if (\$row === false) {
-                \$row = [null]; // for backward compatibility
-            }
             \$stmt->closeCursor();";
 
         if ($col->getType() === PropelTypes::CLOB && $this->getPlatform() instanceof OraclePlatform) {

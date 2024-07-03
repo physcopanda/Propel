@@ -21,7 +21,7 @@ class GeneratedRelationMapWithSchemasTest extends SchemasTestBase
 {
     protected $databaseMap;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->databaseMap = Propel::getDatabaseMap('bookstore-schemas');

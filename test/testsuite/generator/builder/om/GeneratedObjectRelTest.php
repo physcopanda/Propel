@@ -29,7 +29,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/Bookstore
 class GeneratedObjectRelTest extends BookstoreEmptyTestBase
 {
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
     }
@@ -845,8 +845,7 @@ class GeneratedObjectRelTest extends BookstoreEmptyTestBase
 
         $books = $author->getBooks();
         $this->assertCount(1, $books);
-
-        $this->assertEquals('Propel2 Book', $books->getCurrent()->getTitle());
+        $this->assertEquals('Propel2 Book', reset($books)->getTitle());
 
         $author->save();
         $book->save();
@@ -892,7 +891,7 @@ class GeneratedObjectRelTest extends BookstoreEmptyTestBase
 
         $bookSummaries = $book->getBookSummarys();
         $this->assertCount(1, $bookSummaries);
-        $this->assertEquals('summary2 Propel Book', $bookSummaries->getCurrent()->getSummary());
+        $this->assertEquals('summary2 Propel Book', reset($bookSummaries)->getSummary());
 
         $book->save();
         $bookSummary2->save();
@@ -935,7 +934,7 @@ class GeneratedObjectRelTest extends BookstoreEmptyTestBase
 
         BookPeer::clearInstancePool();
 
-        $summary = $this->createMock('BookSummary');
+        $summary = $this->getMock('BookSummary');
         $summary
             ->expects($this->once())
             ->method('isDeleted')

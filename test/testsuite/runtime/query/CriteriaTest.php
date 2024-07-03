@@ -34,7 +34,7 @@ class CriteriaTest extends BookstoreTestBase
      */
     private $savedAdapter;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->c = new Criteria();
@@ -42,7 +42,7 @@ class CriteriaTest extends BookstoreTestBase
         Propel::setDB(null, new DBSQLite());
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         Propel::setDB(null, $this->savedAdapter);
         parent::tearDown();

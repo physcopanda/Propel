@@ -19,9 +19,9 @@ require_once dirname(__FILE__) . '/../../../../../generator/lib/model/Database.p
  *
  * @package    generator.model.diff
  */
-class PropelTableForeignKeyComparatorTest extends \PHPUnit\Framework\TestCase
+class PropelTableForeignKeyComparatorTest extends PHPUnit_Framework_TestCase
 {
-    public function setUp(): void
+    public function setUp()
     {
         $this->platform = new MysqlPlatform();
     }

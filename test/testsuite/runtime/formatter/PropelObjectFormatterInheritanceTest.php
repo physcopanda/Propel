@@ -19,7 +19,7 @@ require_once dirname(__FILE__) . '/../../../tools/helpers/bookstore/BookstoreEmp
  */
 class PropelObjectFormatterInheritanceTest extends BookstoreEmptyTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $b1 = new BookstoreEmployee();

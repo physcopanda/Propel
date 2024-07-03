@@ -24,7 +24,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/Bookstore
  */
 class GeneratedObjectWithFixturesTest extends BookstoreEmptyTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/behavior/TestAuthor.php';
@@ -151,11 +151,11 @@ class GeneratedObjectWithFixturesTest extends BookstoreEmptyTestBase
         // reload and verify that the types are the same
         $r2 = ReviewPeer::retrieveByPK($id);
 
-        $this->assertIsInt($r2->getId(), "Expected getId() to return an integer.");
-        $this->assertIsString($r2->getReviewedBy(), "Expected getReviewedBy() to return a string.");
-        $this->assertIsBool($r2->getRecommended(), "Expected getRecommended() to return a boolean.");
+        $this->assertInternalType('integer', $r2->getId(), "Expected getId() to return an integer.");
+        $this->assertInternalType('string', $r2->getReviewedBy(), "Expected getReviewedBy() to return a string.");
+        $this->assertInternalType('boolean', $r2->getRecommended(), "Expected getRecommended() to return a boolean.");
         $this->assertInstanceOf('Book', $r2->getBook(), "Expected getBook() to return a Book.");
-        $this->assertIsFloat($r2->getBook()->getPrice(), "Expected Book->getPrice() to return a float.");
+        $this->assertInternalType('float', $r2->getBook()->getPrice(), "Expected Book->getPrice() to return a float.");
         $this->assertInstanceOf('DateTime', $r2->getReviewDate(null), "Expected Book->getReviewDate() to return a DateTime.");
 
     }
@@ -288,7 +288,7 @@ class GeneratedObjectWithFixturesTest extends BookstoreEmptyTestBase
 
         $arr1 = $m->toArray(BasePeer::TYPE_COLNAME);
         $this->assertNotNull($arr1[MediaPeer::COVER_IMAGE]);
-        $this->assertIsResource($arr1[MediaPeer::COVER_IMAGE]);
+        $this->assertInternalType('resource', $arr1[MediaPeer::COVER_IMAGE]);
 
         $arr2 = $m->toArray(BasePeer::TYPE_COLNAME, false);
         $this->assertNull($arr2[MediaPeer::COVER_IMAGE]);

@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once dirname(__FILE__) . '/MssqlPlatform.php';
 
 /**
  * MS SQL Server using pdo_sqlsrv implementation.

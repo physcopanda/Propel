@@ -20,7 +20,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/behavior/
  */
 class SortableBehaviorQueryBuilderModifierTest extends BookstoreSortableTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->populateTable11();
@@ -56,7 +56,6 @@ class SortableBehaviorQueryBuilderModifierTest extends BookstoreSortableTestBase
      */
     public function testOrderByRankIncorrectDirection()
     {
-        $this->expectException(PropelException::class);
         Table11Query::create()->orderByRank('foo');
     }
 

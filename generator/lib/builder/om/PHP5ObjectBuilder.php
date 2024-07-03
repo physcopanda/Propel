@@ -8,6 +8,7 @@
  * @license    MIT License
  */
 
+require_once dirname(__FILE__) . '/ObjectBuilder.php';
 
 /**
  * Generates a PHP5 base Object class for user object model (OM).
@@ -1410,9 +1411,6 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
         try {
             \$stmt = " . $this->getPeerClassname() . "::doSelectStmt(\$c, \$con);
             \$row = \$stmt->fetch(PDO::FETCH_NUM);
-            if (\$row === false) {
-                \$row = [null]; // for backward compatibility
-            }
             \$stmt->closeCursor();";
         }
 

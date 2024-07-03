@@ -1,6 +1,6 @@
 <?php
 
-class PlatformDatabaseBuildTimeBase extends \PHPUnit\Framework\TestCase
+class PlatformDatabaseBuildTimeBase extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -23,7 +23,7 @@ class PlatformDatabaseBuildTimeBase extends \PHPUnit\Framework\TestCase
      */
     public $con;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         if (Propel::isInit()) {
             $this->oldPropelConfiguration = Propel::getConfiguration();
@@ -51,7 +51,7 @@ class PlatformDatabaseBuildTimeBase extends \PHPUnit\Framework\TestCase
         $this->parser->parse($this->database);
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         if ($this->oldPropelConfiguration) {
             Propel::setConfiguration($this->oldPropelConfiguration);

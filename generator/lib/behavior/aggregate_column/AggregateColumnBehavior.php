@@ -8,6 +8,8 @@
  * @license    MIT License
  */
 
+require_once 'AggregateColumnRelationBehavior.php';
+
 /**
  * Keeps an aggregate column updated with related table
  *

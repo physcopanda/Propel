@@ -1,12 +1,10 @@
 # Propel #
 
-Propel is an open-source Object-Relational Mapping (ORM) for PHP.
+Propel is an open-source Object-Relational Mapping (ORM) for PHP5.
 
-This fork is maintained by [Dayspring Partners](https://www.dayspringpartners.com/) and provides compatiblity with PHP 7.4 and 8.x.
-
-![Build Status](https://github.com/dayspring-tech/Propel/actions/workflows/test.yml/badge.svg)
-[![Total Downloads](https://poser.pugx.org/dayspring-tech/propel1/downloads.png)](https://packagist.org/packages/dayspring-tech/propel1)
-[![Latest Stable Version](https://poser.pugx.org/dayspring-tech/propel1/v/stable.png)](https://packagist.org/packages/dayspring-tech/propel1)
+[![Build Status](https://secure.travis-ci.org/propelorm/Propel.png?branch=master)](http://travis-ci.org/propelorm/Propel)
+[![Total Downloads](https://poser.pugx.org/propel/propel1/downloads.png)](https://packagist.org/packages/propel/propel1)
+[![Latest Stable Version](https://poser.pugx.org/propel/propel1/v/stable.png)](https://packagist.org/packages/propel/propel1)
 
 ## A quick tour of the features ##
 

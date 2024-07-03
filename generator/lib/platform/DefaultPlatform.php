@@ -8,10 +8,11 @@
  * @license    MIT License
  */
 
-
-
-
-
+require_once dirname(__FILE__) . '/PropelPlatformInterface.php';
+require_once dirname(__FILE__) . '/../model/Column.php';
+require_once dirname(__FILE__) . '/../model/Table.php';
+require_once dirname(__FILE__) . '/../model/Domain.php';
+require_once dirname(__FILE__) . '/../model/PropelTypes.php';
 
 /**
  * Default implementation for the Platform interface.
@@ -1181,7 +1182,7 @@ ALTER TABLE %s ADD
             $values[] = trim($v);
         }
 
-        $value = implode(' | ', $values);
+        $value = implode($values, ' | ');
         if (empty($value) || ' | ' === $value) {
             return null;
         }

@@ -21,14 +21,14 @@ class DatabaseMapTest extends BookstoreTestBase
 {
   protected $databaseMap;
 
-  protected function setUp(): void
+  protected function setUp()
   {
     parent::setUp();
     $this->databaseName = 'foodb';
     $this->databaseMap = TestDatabaseBuilder::getDmap();
   }
 
-  protected function tearDown(): void
+  protected function tearDown()
   {
     // nothing to do for now
     parent::tearDown();

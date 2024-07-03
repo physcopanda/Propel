@@ -8,7 +8,8 @@
  * @license    MIT License
  */
 
-
+require_once dirname(__FILE__) . '/DefaultPlatform.php';
+require_once dirname(__FILE__) . '/../model/Domain.php';
 
 /**
  * MS SQL PropelPlatformInterface implementation.

@@ -37,7 +37,7 @@ class CriteriaCombineTest extends BaseTestCase
    */
   private $savedAdapter;
 
-  protected function setUp(): void
+  protected function setUp()
   {
     parent::setUp();
     $this->c = new Criteria();
@@ -45,7 +45,7 @@ class CriteriaCombineTest extends BaseTestCase
     Propel::setDB(null, new DBSQLite());
   }
 
-  protected function tearDown(): void
+  protected function tearDown()
   {
     Propel::setDB(null, $this->savedAdapter);
     parent::tearDown();

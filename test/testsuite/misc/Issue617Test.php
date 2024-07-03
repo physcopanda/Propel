@@ -18,13 +18,13 @@ class Issue617Test extends PlatformDatabaseBuildTimeBase
      */
     private $updatedBuilder;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->removeTables();
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         $this->removeTables();
         parent::tearDown();

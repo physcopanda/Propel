@@ -1,3 +1,4 @@
+
 /**
  * Populates the the current object based on a $archiveTablePhpName archive object.
  *

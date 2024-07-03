@@ -20,11 +20,11 @@ require_once dirname(__FILE__) . '/../../../../../generator/lib/platform/Default
  * @version    $Id: OMBuilderBuilderTest.php 1347 2009-12-03 21:06:36Z francois $
  * @package    generator.builder.om
  */
-class OMBuilderRelatedByTest extends \PHPUnit\Framework\TestCase
+class OMBuilderRelatedByTest extends PHPUnit_Framework_TestCase
 {
     public static $database;
 
-    public function setUp(): void
+    public function setUp()
     {
         // run only once to save execution time
         if (null == self::$database) {

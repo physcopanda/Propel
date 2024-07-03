@@ -20,7 +20,7 @@ require_once dirname(__FILE__) . '/../../../../tools/helpers/bookstore/behavior/
  */
 class SortableBehaviorPeerBuilderModifierTest extends BookstoreSortableTestBase
 {
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->populateTable11();
