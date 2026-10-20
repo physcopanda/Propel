@@ -320,7 +320,8 @@ class Propel
                 $ident = isset($c['ident']) ? $c['ident'] : 'propel';
                 $conf = isset($c['conf']) ? $c['conf'] : array();
                 $level = isset($c['level']) ? $c['level'] : PEAR_LOG_DEBUG;
-                self::$logger = Log::singleton($type, $name, $ident, $conf, $level);
+                self::$logger = Log::singleton($type, $name, $ident, is_array($conf) ? $conf : array(), $level);
+
             } // if isset()
         }
     }
